@@ -1,3 +1,7 @@
+---
+# Check pre-requisites
+- include: pre-requisites.yml
+
 - name: Delete VPC
   ec2_vpc_net:   
     name: "{{ default_prefix }}-{{ default_stage }}-{{ default_platform }}-{{ vpc_label }}"  
@@ -5,7 +9,7 @@
     region: "{{ default_region }}"  
     state: absent  
     purge_cidrs: yes  
-    register: vpc_delete
+  register: vpc_delete
     
  - name: "Gather Delete vpc info"
    ansible.builtin.set_fact:
