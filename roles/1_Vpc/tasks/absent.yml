@@ -8,7 +8,7 @@
     purge_cidrs: yes  
   register: vpc_delete
     
- - name: "Gather Delete vpc info"
-   ansible.builtin.set_fact:
-     vpc: '{{ vpc_delete.vpc }}'
+- name: "Gather Delete vpc info"
+  ansible.builtin.set_fact:
+   vpc: '{{ vpc_delete.vpc }}'
  
