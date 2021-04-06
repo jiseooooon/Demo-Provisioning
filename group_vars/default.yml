@@ -8,6 +8,9 @@ default_state: present
 
 default_account_alias: "{{default_account}}{{default_stage}}"
 
+vpc_label: VPC
+subnet_label: SUB
+
 # 미사용 
 default_image:
   bastion: ami-05b622b5fa0269787
