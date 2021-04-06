@@ -1,14 +1,7 @@
 ---
-- name: "Gather VPC Info"
-  amazon.aws.ec2_vpc_net_info:
-    filters:
-      "tag:Name": "{{ default_prefix }}-{{ default_stage }}-{{ default_platform }}-{{ vpc_label }}"
-    register: vpc_info
-
-
 - name: "Remove Virtual Private Cloud Subnet"
   ec2_vpc_subnet:
-    vpc_id: "{{ vpc_info.vpcs.vpc_id }}"
+    vpc_id: "vpc-065da5218c2ed9c26"
     cidr: "{{ item.value.cidr }}"
     region: "{{ default_region }}"
     state: absent
