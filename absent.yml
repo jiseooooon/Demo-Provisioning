@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars_files:
+    - group_vars/default.yml
+    - group_vars/metadata.yml
+  tasks:
+    - include_role:
+        name: '{{role_name}}'
+        tasks_from: absent
+      loop:
+        - 2_Subnet
+        - 1_Vpc
+      loop_control:
+        loop_var: role_name
