@@ -1,0 +1,32 @@
+---
+# VPC Information
+vpc_cidr_block: 172.18.0.0/16
+
+vpc_tags:
+  Company: "{{ default_prefix }}"
+  Country: KR
+  Service: VPC
+  Stage: "{{ default_stage }}"
+  
+# VPC Subnet Information
+vpc_subnets_metadata:
+  public_sub_a_zone:
+    cidr: 172.18.8.0/22
+    az_alias: a
+    system: PUB
+    service: Public Zone Subnet
+  private_sub_a_zone:
+    cidr: 172.18.20.0/22
+    az_alias: a
+    system: PRV
+    service : Private Zone Subnet
+  public_sub_c_zone:
+    cidr: 172.18.24.0/22
+    az_alias: c
+    system: PUB
+    service : Public Zone Subent
+  private_sub_c_zone:
+    cidr: 172.18.32.0/22
+    az_alias: c
+    system: PRV
+    service : Private Zone Subnet
