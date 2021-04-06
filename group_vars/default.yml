@@ -6,6 +6,7 @@ default_stage: DEV
 default_platform: DEVOS
 default_state: present
 
+default_account_alias: "{{default_account}}{{default_stage}}"
 
 # 미사용 
 default_image:
