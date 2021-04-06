@@ -1,7 +1,7 @@
 ---
 - name: "Create Virtual Private Cloud"
   ec2_vpc_net:
-    name: "{{ default_prefix }}-{{ REGIONS[default_region] }}-{{ default_account_alias }}"
+    name: "{{ default_prefix }}-{{ default_account_alias }}"
     cidr_block: "{{ vpc_cidr_block }}"
     region: "{{ default_region }}"
     tags: "{{vpc_tags}}"
