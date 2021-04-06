@@ -7,7 +7,7 @@
 
 - name: "Remove Virtual Private Cloud Subnet"
   ec2_vpc_subnet:
-    vpc_id: "{{ vpc_info.id }}"
+    vpc_id: "{{ vpc_info.vpcs.vpc_id }}"
     cidr: "{{ item.value.cidr }}"
     region: "{{ default_region }}"
     state: absent
