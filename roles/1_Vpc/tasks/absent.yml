@@ -1,7 +1,4 @@
 ---
-# Check pre-requisites
-- include: pre-requisites.yml
-
 - name: Delete VPC
   ec2_vpc_net:   
     name: "{{ default_prefix }}-{{ default_stage }}-{{ default_platform }}-{{ vpc_label }}"  
