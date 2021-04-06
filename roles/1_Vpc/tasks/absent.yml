@@ -1,0 +1,13 @@
+- name: Delete VPC
+  ec2_vpc_net:   
+    name: "{{ default_prefix }}-{{ default_stage }}-{{ default_platform }}-{{ vpc_label }}"  
+    cidr_block: "{{ vpc_cidr_block }}"  
+    region: "{{ default_region }}"  
+    state: absent  
+    purge_cidrs: yes  
+    register: vpc_delete
+    
+ - name: "Gather Delete vpc info"
+   ansible.builtin.set_fact:
+     vpc: '{{ vpc_delete.vpc }}'
+ 
